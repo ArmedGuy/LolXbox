@@ -27,6 +27,9 @@
     <ClInclude Include="XBOXController.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="DirectInputScanCodes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">

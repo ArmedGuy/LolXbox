@@ -18,6 +18,7 @@
 #define WIN32_LEAN_AND_MEAN
 
 #include "XBOXController.h"
+#include "DirectInputScanCodes.h"
 
 
 // TODO: reference additional headers your program requires here
