@@ -10,6 +10,7 @@
 #include <iostream>
 #include <stdio.h>
 #include <tchar.h>
+#include <Windows.h>
 
 
 #define _XBOX_CONTROLLER_H_

@@ -24,6 +24,7 @@ typedef struct {
     bool y;
     bool leftShoulder;
     bool rightShoulder;
+    bool dpadDown;
     bool start;
 } BUTTONS_PRESSED;
 
@@ -142,6 +143,14 @@ void ProcessAttacks(XINPUT_STATE state) {
     bool aPressed = ButtonPressed(state, XINPUT_GAMEPAD_A);
     bool bPressed = ButtonPressed(state, XINPUT_GAMEPAD_B);
     bool yPressed = ButtonPressed(state, XINPUT_GAMEPAD_Y);
+    bool dpadDownPressed = ButtonPressed(state, XINPUT_GAMEPAD_DPAD_DOWN);
+
+    if (dpadDownPressed && !pressed.dpadDown)
+    {
+        pressed.dpadDown = true;
+        PressKey(DIK_LCONTROL);
+    }
+
     if (xPressed && !pressed.x) {
         pressed.x = true;
         PressKey(DIK_Q);
@@ -176,6 +185,12 @@ void ProcessAttacks(XINPUT_STATE state) {
     if (!yPressed && pressed.y) {
         pressed.y = false;
         ReleaseKey(DIK_R);
+    }
+
+    if (!dpadDownPressed && pressed.dpadDown)
+    {
+        pressed.dpadDown = false;
+        ReleaseKey(DIK_LCONTROL);
     }
 }
 
